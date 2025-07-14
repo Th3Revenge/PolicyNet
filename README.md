@@ -24,7 +24,7 @@ This repository contains a combination of Python scripts and IPython Notebooks, 
 
 - The results after one epoch of training on the state of the art models are obtained and evaluated into `./notebooks/sota_comparison.ipynb`.
 
-- `./notebooks/LSTM_vs_Transformer.ipynb` performs training, test, and results comparison for the two models in the file name on user actions. The notebook reports one epochs, but the results for 300 epochs can be obtained by running it with the selected value for `num_epochs`. For convenience, the script `./lstm_vs_transformer/lstm_vs_transformer.py` has been generated from the notebook.
+- `./notebooks/LSTM_vs_Transformer.ipynb` performs training, test, and results comparison for the two models in the file name on user actions. The notebook reports one epochs, but the results for 300 epochs can be obtained by running it after changing the value of `num_epochs`. For convenience, the script `./lstm_vs_transformer/lstm_vs_transformer.py` has been generated from the notebook.
 
 - In `./notebooks/mobilenet.ipynb`, the training of the proposed model on top of MobileNet predictions is performed, and the test results are presented.
 
