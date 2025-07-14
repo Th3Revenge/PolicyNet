@@ -31,3 +31,5 @@ This repository contains a combination of Python scripts and IPython Notebooks, 
 - In `./notebooks/Ablation_Study.ipynb` an evaluation after training only on the sequence of images is performed. This notebooks uses image representations provided by the script in `./vit/`
 
 - `./notebooks/Smoother_brakes.ipynb` considers the case of a pre-processed brake signal. The image representations needed are provided by the script in `./vit/`
+
+- `./figures_generation/` contains a notebook with the code for generating the plots that have been added to the thesis, starting from the provided tensors of model predictions. The figures are in there too.
