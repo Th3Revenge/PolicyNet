@@ -91,14 +91,18 @@ for epoch in range(num_epochs):
     img = transform(img.copy())
     img.to(device)
     img = img.unsqueeze(0)
+
     if queue_tens == None:
       queue_tens = img
       continue
-    elif len(queue_tens) < window_size:
+    elif len(queue_tens) < window_size-1:
       queue_tens = torch.cat((queue_tens, img), dim=0)
       continue
+    elif len(queue_tens) == window_size-1:
+      queue_tens = torch.cat((queue_tens, img), dim=0)
+    else:
+      queue_tens = torch.cat((queue_tens[1:], img), dim=0)
 
-    queue_tens = torch.cat((queue_tens[1:], img), dim=0)
     if len(queue_tens) > window_size:
       print("window size exceeded")
       break
@@ -130,17 +134,21 @@ with torch.no_grad():
     if queue_tens == None:
       queue_tens = img
       continue
-    elif len(queue_tens) < window_size:
+    elif len(queue_tens) < window_size-1:
       queue_tens = torch.cat((queue_tens, img), dim=0)
       continue
+    elif len(queue_tens) == window_size-1:
+      queue_tens = torch.cat((queue_tens, img), dim=0)
+    else:
+      queue_tens = torch.cat((queue_tens[1:], img), dim=0)
 
     queue_tens = torch.cat((queue_tens[1:], img), dim=0)
     if len(queue_tens) < window_size:
       print("window size exceeded")
       break
-    label = torch.tensor([train['accelerator_pedal_position'][i]/100,
-                train['brake_pedal_status'][i],
-                (train['steering_wheel_angle'][i]+600)/1200], dtype=torch.float32).to(device)
+    label = torch.tensor([test['accelerator_pedal_position'][i]/100,
+                test['brake_pedal_status'][i],
+                (test['steering_wheel_angle'][i]+600)/1200], dtype=torch.float32).to(device)
 
     output = cnnlstm(queue_tens.to(device))
     loss = criterion(output, label)
