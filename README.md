@@ -14,7 +14,7 @@ cat test* > rec1501612590_export.hdf5
 
 This repository contains Python scripts and IPython Notebooks, organised as follows:
 
-- The folders `./cnn300` and `cnnlstm300` contain the scripts for performing 300 epochs of trainnig on the identified state of the art models.
+- The folders `./cnn300` and `cnnlstm300` contain the scripts for performing 300 epochs of training on the identified state of the art models.
 
 - policyNet.py is the script in which the model is defined, trained and evaluated. After testing, the script saves the predicted values to a file, for any need of further inspection.
 
