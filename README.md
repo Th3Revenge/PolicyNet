@@ -1,6 +1,6 @@
 # PolicyNet
 
-This repository is intended as a complement to the article: "PolicyNet: Behaviour Cloning for Online Learning of Driver Habits", and contains the code related to the shown results.
+This repository is intended as a complement to the article: "", and contains the code related to the shown results.
 
 The data used come from the [DDD20](https://sites.google.com/view/davis-driving-dataset-2020/home) dataset. The two extracted recordings are split in this repository, because of the limits on the file size. In order to reconstruct the files, please run in your terminal:
 
