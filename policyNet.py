@@ -224,8 +224,6 @@ for epoch in range(num_epochs):
     optimizer.zero_grad()
 
     loss = criterion(output, sensors_queue_tensor[-1])
-    loss = loss - alpha * torch.abs(sensors_queue_tensor[-1][2] - sensors_queue_tensor[-2][2])
-    loss = torch.nn.functional.relu(loss)
 
     if(output.shape != sensors_queue_tensor[-1].shape):
       print(output.shape, sensors_queue_tensor[-1].shape)
@@ -310,8 +308,6 @@ with torch.no_grad():
     output = policyNet(img_queue_tensor, sensors_queue_tensor[:-1])
 
     loss = criterion(output, sensors_queue_tensor[-1])
-    loss = loss - alpha * torch.abs(sensors_queue_tensor[-1][2] - sensors_queue_tensor[-2][2])
-    loss = torch.nn.functional.relu(loss)
         
     predictions.append(output.tolist())
 
