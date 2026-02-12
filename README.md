@@ -1,6 +1,6 @@
 # PolicyNet
 
-This repository is intended as a complement to the article: "", and contains the code related to the shown results.
+This repository is intended as a complement to the article: "Behaviour Cloning for Online Learning of Driver Habits", and contains the code related to the shown results.
 
 The data used come from the [DDD20](https://sites.google.com/view/davis-driving-dataset-2020/home) dataset. The two extracted recordings are split in this repository, because of the limits on the file size. In order to reconstruct the files, please run in your terminal:
 
@@ -19,3 +19,9 @@ This repository contains Python scripts and IPython Notebooks, organised as foll
 - policyNet.py is the script in which the model is defined, trained and evaluated. After testing, the script saves the predicted values to a file, for any need of further inspection.
 
 - The Notebook `pt_to_csv.ipynb` lets the user convert the files containing the predictions obtained by running the scripts in the repository by running the related cell.
+
+- The files "cnn_predictions_300.csv", "cnnlstm_predictions_300.csv", "new_attention.csv" represent the saved prediction for the model in the file name
+
+- The file "truth.csv" contains the ground truth for the test scenario
+
+- "Evaluation metrics.ipynb" is a Jupyter Notebook containing the code for the evaluation of the metrics provided in the article
