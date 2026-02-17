@@ -322,4 +322,4 @@ plt.ylabel("loss")
 plt.savefig("test_loss.png")
 
 predictions_tensor = torch.tensor(predictions, dtype=torch.float32)
-torch.save(predictions_tensor, "./swin_predictions_pi.pt")
+torch.save(predictions_tensor, "./swin_predictions.pt")
